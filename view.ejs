@@ -1,0 +1,32 @@
+
+<%- include('partials/header.ejs') %>
+<div class="min-vh-100">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="content col-lg-2 col-8 my-4 mx-4 p-4 text-center" style="height: 170px;">
+                <form action="/delete" method="post">
+                    <input type="text" name="postId" hidden value="<%= postId %>">
+                    <input style="width: 85%;" class="btn btn-danger fs-5 btn-lg my-2 button-rad" type="submit" name="delete" value="delete">
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container update">
+    <h1>Edit Post</h1>
+    <form action="/update" method="POST">
+        <input type="hidden" name="postId" value="<%= postId %>">
+        <div class="mb-3">
+            <label for="name" class="form-label">Post Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= post.name %>">
+        </div>
+        <div class="post-text">
+            <label for="text" class="form-label">Post text</label>
+            <textarea class="form-control" id="text" name="text" rows="6"><%= post.text %></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Post</button>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,11 @@
+<%- include("./partials/header.ejs") %>
+<h1 class="posts-heading">Here are the some of posts!!</h1>
+<% posts.forEach(post => {%>
+    <li class="posts-line">
+        <p class="fs-6 fw-light"><%= post.date %></p>
+        <!-- <h1 class="heading"></h1> -->
+        <h1 class="fs-2 pt-serif heading"><a href="/view/<%= posts.indexOf(post) %>"><%= post.name %></a></h1>
+        <h2 class="textarea"><%= post.text %></h2>
+    </li>
+    <% }) %>
+    

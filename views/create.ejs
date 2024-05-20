@@ -1,0 +1,13 @@
+<%- include("./partials/header.ejs") %>
+
+
+  
+  <h1 class="post-create">Create Post!</h1>
+<form action="/save" method="POST">
+    <input name="name" type="text" class="feedback-input" placeholder="Name" />
+    <!-- <input name="email" type="text" class="feedback-input" placeholder="Email" /> -->
+    <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+
+    <input type="submit" value="CREATE" class="submit" />
+  </form>
+  <%- include("./partials/footer.ejs") %>
